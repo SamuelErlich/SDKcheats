@@ -12,7 +12,9 @@ const dayzProducts = [
             "Debugcamera",
             "No grass",
             "Silent Aimbot",
-            "ESP"
+            "ESP",
+            " ",
+            " "
         ]
     },
     {
@@ -26,7 +28,9 @@ const dayzProducts = [
             "Silent Aimbot",
             "Noclip",
             "Debugcamera",
-            "Stashes esp"
+            "Stashes esp",
+            " "
+        
         ]
     },
     {
@@ -55,7 +59,8 @@ const dayzProducts = [
             "ESP players and bots",
             "Radar",
             "Loot ESP",
-            "Container ESP"
+            "Container ESP",
+            " "
         ]
     },
     {
@@ -69,7 +74,8 @@ const dayzProducts = [
             "ESP players",
             "ESP loot",
             "ESP containers",
-            "Aimbot"
+            "Aimbot",
+            " "
         ]
     },
     {
@@ -83,7 +89,8 @@ const dayzProducts = [
             "Aimbot",
             "No grass",
             "Player ESP",
-            "Containers ESP"
+            "Containers ESP",
+            " "
         ]
     },
     {
@@ -99,7 +106,8 @@ const dayzProducts = [
             "Loot Esp",
             "Containers Esp",
             "No grass",
-            "Radar"
+            "Radar",
+            " "
         ]
     }
 ];
