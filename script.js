@@ -24,7 +24,7 @@ function loadProducts() {
             price: 200,
             original_price: 350,
             discount_percentage: 43,
-            game_url: "https://elitehacks.ru/en/game/rust"
+            game_url: "https://"
         },
         {
             id: 2,
@@ -40,7 +40,8 @@ function loadProducts() {
             description: "Cheats para DayZ - Sobrevivência garantida no apocalipse zumbi",
             price: 199,
             original_price: 299,
-            discount_percentage: 33
+            discount_percentage: 33,
+            game_url: "dayz.html",
         }
     ];
     
