@@ -5,20 +5,21 @@ const dayzProducts = [
     {
         id: 1,
         name: "Authority",
-        price: "From 4 $",
+        price: "A partir de R$35",
         status: "online",
         features: [
             "Stashes esp",
             "Debugcamera",
             "No grass",
             "Silent Aimbot",
-            "ESP"
+            "ESP",
+            "Mais"
         ]
     },
     {
         id: 2,
         name: "ANCIENT",
-        price: "From 6 $",
+        price: "A partir de R$40",
         status: "online",
         features: [
             "ESP",
@@ -26,13 +27,14 @@ const dayzProducts = [
             "Silent Aimbot",
             "Noclip",
             "Debugcamera",
-            "Stashes esp"
+            "Mais"
+        
         ]
     },
     {
         id: 3,
         name: "HYPER",
-        price: "From 3.5 $",
+        price: "A partir de R$35",
         status: "online",
         features: [
             "FOV",
@@ -40,14 +42,13 @@ const dayzProducts = [
             "Players, bots ESP",
             "Radar",
             "Aimbot",
-            "Containers, loots ESP",
-            "Loot, container distance"
+            "Mais"
         ]
     },
     {
         id: 4,
         name: "PUSSYCAT",
-        price: "From 4.5 $",
+        price: "A partir de R$40",
         status: "online",
         features: [
             "Aimbot",
@@ -55,13 +56,13 @@ const dayzProducts = [
             "ESP players and bots",
             "Radar",
             "Loot ESP",
-            "Container ESP"
+            "Mais"
         ]
     },
     {
         id: 5,
         name: "MEDUSA",
-        price: "From 3.3 $",
+        price: "A partir de R$40",
         status: "updating",
         features: [
             "Night vision",
@@ -69,13 +70,13 @@ const dayzProducts = [
             "ESP players",
             "ESP loot",
             "ESP containers",
-            "Aimbot"
+            "Mais"
         ]
     },
     {
         id: 6,
         name: "BTG",
-        price: "From 5.5 $",
+        price: "A partir de R$40",
         status: "online",
         features: [
             "Zombie ESP",
@@ -83,13 +84,13 @@ const dayzProducts = [
             "Aimbot",
             "No grass",
             "Player ESP",
-            "Containers ESP"
+            "Mais"
         ]
     },
     {
         id: 7,
         name: "DULLWAVE",
-        price: "From 4 $",
+        price: "A partir de R$40",
         originalPrice: "6 $",
         discount: "33%",
         status: "online",
@@ -99,7 +100,7 @@ const dayzProducts = [
             "Loot Esp",
             "Containers Esp",
             "No grass",
-            "Radar"
+            "Mais"
         ]
     }
 ];
