@@ -169,8 +169,12 @@ function purchaseProduct(productId) {
 function viewDetails(productId) {
     const product = dayzProducts.find(p => p.id === productId);
     if (product) {
-        const featuresText = product.features.join('\n• ');
-        alert(`Detalhes do ${product.name}\n\nPreço: ${product.price}\nStatus: ${getStatusText(product.status)}\n\nRecursos:\n• ${featuresText}`);
+        if (product.name === "Authority") {
+            window.location.href = "authority.html";
+        } else {
+            const featuresText = product.features.join("\n• ");
+            alert(`Detalhes do ${product.name}\n\nPreço: ${product.price}\nStatus: ${getStatusText(product.status)}\n\nRecursos:\n• ${featuresText}`);
+        }
     }
 }
 
