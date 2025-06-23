@@ -5,7 +5,7 @@ const dayzProducts = [
     {
         id: 1,
         name: "Authority",
-        price: "From 4 $",
+        price: "A partir de R$35",
         status: "online",
         features: [
             "Stashes esp",
@@ -18,7 +18,7 @@ const dayzProducts = [
     {
         id: 2,
         name: "ANCIENT",
-        price: "From 6 $",
+        price: "A partir de R$40",
         status: "online",
         features: [
             "ESP",
@@ -32,7 +32,7 @@ const dayzProducts = [
     {
         id: 3,
         name: "HYPER",
-        price: "From 3.5 $",
+        price: "A partir de R$35",
         status: "online",
         features: [
             "FOV",
