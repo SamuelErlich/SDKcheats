@@ -425,3 +425,45 @@
     }
 }
 
+
+
+/* About Section Layout Improvements */
+.about-section .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.features-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    width: 100%;
+    max-width: 1200px; /* Limit width for better readability */
+}
+
+.feature-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Distribute content evenly */
+    height: 100%; /* Ensure all items in a row have same height */
+}
+
+.feature-item h3 {
+    text-align: center;
+}
+
+.feature-list {
+    flex-grow: 1; /* Allow feature list to take available space */
+}
+
+.games-list {
+    flex-grow: 1; /* Allow games list to take available space */
+}
+
+@media (max-width: 768px) {
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
