@@ -33,35 +33,33 @@ tabBtns.forEach(btn => {
         tabPanels.forEach(panel => panel.classList.remove('active'));
         
         // Add active class to clicked tab and corresponding panel
-   const thumbnails = document.querySelectorAll(".thumbnail");
-const mainMediaContainer = document.querySelector(".main-media");
-
-// Media Gallery
-thumbnails.forEach((thumbnail) => {
-  thumbnail.addEventListener("click", () => {
-    // Remove active class from all thumbnails
-    thumbnails.forEach((thumb) => thumb.classList.remove("active"));
-
-    // Add active class to clicked thumbnail
-    thumbnail.classList.add("active");
-
-    // Update main media
-    const mediaType = thumbnail.dataset.mediaType;
-    const mediaSrc = thumbnail.dataset.src;
-
-    if (mediaType === "image") {
-      mainMediaContainer.innerHTML = `<img src="${mediaSrc}" alt="Product Media" class="main-image">`;
-    } else if (mediaType === "video") {
-      mainMediaContainer.innerHTML = `<iframe src="${mediaSrc}?autoplay=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="main-video"></iframe>`;
-    }
-  });
+        btn.classList.add('active');
+        document.getElementById(targetTab).classList.add('active');
+    });
 });
 
-// Video Play Function (no longer needed as handled by thumbnail click)
+// Media Gallery
+thumbnails.forEach(thumbnail => {
+    thumbnail.addEventListener('click', () => {
+        // Remove active class from all thumbnails
+        thumbnails.forEach(thumb => thumb.classList.remove('active'));
+        
+        // Add active class to clicked thumbnail
+        thumbnail.classList.add('active');
+        
+        // Update main image
+        const newSrc = thumbnail.querySelector('img').src;
+        mainImage.src = newSrc;
+    });
+});
+
+// Video Play Function
 function playVideo() {
-  // This function is now redundant as video playback is handled by thumbnail click
+    // This would typically open a video modal or redirect to video
+    alert('Funcionalidade de vídeo será implementada em breve!');
 }
- Buy Button
+
+// Buy Button
 document.querySelector('.buy-btn').addEventListener('click', () => {
     const selectedDuration = document.querySelector('.duration-option.active');
     const duration = selectedDuration.querySelector('.duration').textContent;
