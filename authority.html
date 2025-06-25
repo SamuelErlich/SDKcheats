@@ -413,3 +413,35 @@
 </body>
 </html>
 
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const buyButton = document.querySelector('.buy-btn');
+        const durationOptions = document.querySelectorAll('.duration-option');
+        const productName = document.querySelector('.product-title').textContent.trim();
+        const totalPriceElement = document.querySelector('.total-price .amount');
+
+        let selectedDuration = document.querySelector('.duration-option.active .duration').textContent.trim();
+
+        durationOptions.forEach(option => {
+            option.addEventListener('click', function() {
+                durationOptions.forEach(opt => opt.classList.remove('active'));
+                this.classList.add('active');
+                selectedDuration = this.querySelector('.duration').textContent.trim();
+                const price = this.dataset.price;
+                totalPriceElement.textContent = `R$ ${price}`;
+            });
+        });
+
+        buyButton.addEventListener('click', function() {
+            const phoneNumber = '5544936184613';
+            const message = `Olá! Tenho interesse em adquirir o produto ${productName} - ${selectedDuration}.`;
+            const whatsappUrl = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(message)}`;
+            
+            window.open(whatsappUrl, '_blank');
+        });
+    });
+</script>
+
+
