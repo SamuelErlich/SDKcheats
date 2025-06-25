@@ -161,7 +161,7 @@ function getStatusText(status) {
 function purchaseProduct(productId) {
     const product = dayzProducts.find(p => p.id === productId);
     if (product) {
-        alert(`Redirecionando para a compra do ${product.name}\nPreço: ${product.price}\n\nEm um site real, isso levaria você para uma página de pagamento segura.`);
+        // Removido o alert
     }
 }
 
@@ -172,8 +172,7 @@ function viewDetails(productId) {
         if (product.name === "Authority") {
             window.location.href = "authority.html";
         } else {
-            const featuresText = product.features.join("\n• ");
-            alert(`Detalhes do ${product.name}\n\nPreço: ${product.price}\nStatus: ${getStatusText(product.status)}\n\nRecursos:\n• ${featuresText}`);
+            // Removido o alert
         }
     }
 }
