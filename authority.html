@@ -326,8 +326,8 @@
             const durationOptions = document.querySelectorAll(".duration-option");
             const totalPriceElement = document.querySelector(".total-price .amount");
             const buyButton = document.querySelector(".buy-btn");
-            const acceptTermsCheckbox = document.querySelector(".purchase-terms input[type=\'checkbox\']:nth-of-type(1)");
-            const acceptPrivacyCheckbox = document.querySelector(".purchase-terms input[type=\'checkbox\']:nth-of-type(2)");
+            const acceptTermsCheckbox = document.getElementById("accept-terms");
+            const acceptPrivacyCheckbox = document.getElementById("accept-privacy");
 
             let selectedDuration = 1; // Default to 1 Day
             let selectedPrice = 15; // Default price for 1 Day
@@ -351,7 +351,18 @@
             // Event listener for buy button
             buyButton.addEventListener("click", function() {
                 if (!acceptTermsCheckbox.checked || !acceptPrivacyCheckbox.checked) {
-                    alert("Por favor, aceite os termos de uso e a política de privacidade para continuar.");
+                    // Adiciona uma classe para destacar os checkboxes não marcados
+                    if (!acceptTermsCheckbox.checked) {
+                        acceptTermsCheckbox.parentElement.classList.add('highlight-error');
+                    }
+                    if (!acceptPrivacyCheckbox.checked) {
+                        acceptPrivacyCheckbox.parentElement.classList.add('highlight-error');
+                    }
+                    // Remove a classe de destaque após alguns segundos
+                    setTimeout(() => {
+                        acceptTermsCheckbox.parentElement.classList.remove('highlight-error');
+                        acceptPrivacyCheckbox.parentElement.classList.remove('highlight-error');
+                    }, 3000);
                     return;
                 }
 
@@ -382,7 +393,7 @@
 
             // Placeholder for video play functionality
             window.playVideo = function() {
-                alert("Funcionalidade de vídeo em desenvolvimento!");
+                // alert("Funcionalidade de vídeo em desenvolvimento!"); // Removido o alerta
             };
 
             // Load related products (example, replace with actual data loading)
@@ -424,6 +435,81 @@
             }
         });
     </script>
+    <style>
+        .highlight-error {
+            border: 2px solid red; /* Adiciona uma borda vermelha para destacar */
+            box-shadow: 0 0 5px red; /* Adiciona uma sombra vermelha */
+        }
+    </style>
 </body>
 </html>
+
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const durationOptions = document.querySelectorAll('.duration-option');
+        const totalPriceElement = document.querySelector('.purchase-info .amount');
+        const buyButton = document.querySelector('.buy-btn');
+        const productName = document.querySelector('.product-title').textContent.trim();
+
+        let selectedDuration = 1;
+        let selectedPrice = 15;
+
+        durationOptions.forEach(option => {
+            option.addEventListener('click', function() {
+                durationOptions.forEach(opt => opt.classList.remove('active'));
+                this.classList.add('active');
+                selectedDuration = this.dataset.duration;
+                selectedPrice = this.dataset.price;
+                totalPriceElement.textContent = `R$ ${selectedPrice}`;
+            });
+        });
+
+        buyButton.addEventListener('click', function() {
+            const whatsappNumber = '5544936184613';
+            const message = `Olá! Tenho interesse em comprar o produto "${productName}" para ${selectedDuration} dia(s) no valor de R$ ${selectedPrice}.`;
+            const whatsappUrl = `https://api.whatsapp.com/send/?phone=${whatsappNumber}&text=${encodeURIComponent(message)}&type=phone_number&app_absent=0`;
+            window.location.href = whatsappUrl;
+        });
+    });
+</script>
+
+
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const buyButton = document.querySelector('.buy-btn');
+        const durationOptions = document.querySelectorAll('.duration-option');
+        const acceptTermsCheckbox = document.getElementById('accept-terms');
+        const acceptPrivacyCheckbox = document.getElementById('accept-privacy');
+        const productTitle = 'Authority Cheat para DayZ';
+
+        let selectedDuration = 1; // Default to 1 Day
+        let selectedPrice = 15; // Default to R$ 15
+
+        durationOptions.forEach(option => {
+            option.addEventListener('click', function() {
+                durationOptions.forEach(opt => opt.classList.remove('active'));
+                this.classList.add('active');
+                selectedDuration = this.dataset.duration;
+                selectedPrice = this.dataset.price;
+                document.querySelector('.total-price .amount').textContent = `R$ ${selectedPrice}`;
+            });
+        });
+
+        buyButton.addEventListener('click', function() {
+            if (!acceptTermsCheckbox.checked || !acceptPrivacyCheckbox.checked) {
+                alert('Por favor, aceite os termos de uso e a política de privacidade para continuar.');
+                return;
+            }
+
+            const message = `Olá! Tenho interesse em adquirir o ${productTitle} para ${selectedDuration} dia(s) no valor de R$ ${selectedPrice}.`;
+            const whatsappUrl = `https://api.whatsapp.com/send/?phone=5544936184613&text=${encodeURIComponent(message)}&type=phone_number&app_absent=0`;
+            window.location.href = whatsappUrl;
+        });
+    });
+</script>
+
 
