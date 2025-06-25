@@ -145,7 +145,7 @@ async function processCardPayment() {
         };
 
         // Enviar para o backend
-        const response = await fetch('/api/payment/card', {
+        const response = await fetch('https://sdkcheats-payment-backend.onrender.com/api/payment/card', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

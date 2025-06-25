@@ -46,7 +46,7 @@ async function loadCryptoCurrencies() {
         cryptoGrid.innerHTML = '<div class="loading">Carregando criptomoedas...</div>';
 
         // Buscar moedas disponíveis
-        const response = await fetch('/api/payment/crypto/currencies');
+        const response = await fetch('https://sdkcheats-payment-backend.onrender.com/api/payment/crypto/currencies');
         const result = await response.json();
 
         if (result.success) {
@@ -138,7 +138,7 @@ async function createCryptoInvoice() {
         };
 
         // Enviar para o backend
-        const response = await fetch('/api/payment/crypto', {
+        const response = await fetch('https://sdkcheats-payment-backend.onrender.com/api/payment/crypto', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -220,7 +220,7 @@ function startStatusCheck(invoiceId) {
     // Verificar status a cada 30 segundos
     statusCheckInterval = setInterval(async () => {
         try {
-            const response = await fetch(`/api/payment/crypto/status/${invoiceId}`);
+            const response = await fetch(`https://sdkcheats-payment-backend.onrender.com/api/payment/crypto/status/${invoiceId}`);
             const result = await response.json();
             
             if (result.success) {

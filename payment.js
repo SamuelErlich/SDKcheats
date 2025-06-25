@@ -236,7 +236,7 @@ async function processPayment() {
 
 async function processPixPayment(paymentData) {
     try {
-        const response = await fetch('/api/payment/pix', {
+        const response = await fetch('https://sdkcheats-payment-backend.onrender.com/api/payment/pix', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
