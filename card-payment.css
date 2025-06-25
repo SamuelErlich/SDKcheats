@@ -1,0 +1,268 @@
+/* Estilos gerais para o corpo da página */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Estilos do cabeçalho (se houver) */
+header {
+    background-color: #222222;
+    padding: 1rem 0;
+    text-align: center;
+    border-bottom: 1px solid #333333;
+}
+
+header h1 {
+    color: #F15A24;
+    margin: 0;
+}
+
+/* Container principal do formulário */
+.container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #2d2d2d;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+/* Seção de resumo do pedido */
+.order-summary {
+    flex: 1;
+    min-width: 300px;
+    background-color: #3a3a3a;
+    padding: 1.5rem;
+    border-radius: 8px;
+}
+
+.order-summary h2 {
+    color: #F15A24;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+}
+
+.order-summary p {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.8rem;
+    font-size: 1.1rem;
+}
+
+.order-summary p strong {
+    color: #F7931E;
+}
+
+.order-summary .total-price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-top: 1px solid #444444;
+    padding-top: 1rem;
+    margin-top: 1.5rem;
+}
+
+/* Seção de dados do cartão */
+.card-details {
+    flex: 2;
+    min-width: 350px;
+}
+
+.card-details h2 {
+    color: #F15A24;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #cccccc;
+    font-size: 1rem;
+}
+
+/* Estilos para os campos do Mercado Pago */
+.mercadopago-input-container {
+    background-color: #444444;
+    border: 1px solid #555555;
+    border-radius: 6px;
+    padding: 0.75rem 1rem;
+    box-sizing: border-box;
+    width: 100%;
+    color: #ffffff;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.mercadopago-input-container:focus-within {
+    border-color: #F15A24;
+}
+
+/* Estilos para o iframe do Mercado Pago */
+.mercadopago-input-container iframe {
+    width: 100% !important;
+    height: 40px !important; /* Altura padrão para campos de input */
+    border: none !important;
+    background: transparent !important;
+}
+
+/* Estilos para o select de parcelas */
+.form-group select {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #555555;
+    border-radius: 6px;
+    background-color: #444444;
+    color: #ffffff;
+    font-size: 1rem;
+    appearance: none; /* Remove estilo padrão do select */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%20viewBox%3D%220%200%20292.4%20292.4%22%3E%3Cpath%20fill%3D%22%23cccccc%22%20d%3D%22M287%2C197.9L146.2%2C57.1L5.4%2C197.9h281.6z%22%2F%3E%3C%2Fsvg%3E'); /* Seta customizada */
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 0.8em auto;
+}
+
+.form-group select:focus {
+    border-color: #F15A24;
+    outline: none;
+}
+
+/* Botão de pagamento */
+.pay-button {
+    width: 100%;
+    padding: 1rem;
+    background: linear-gradient(45deg, #F15A24, #F7931E);
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-top: 1.5rem;
+}
+
+.pay-button:hover {
+    background: linear-gradient(45deg, #F7931E, #F15A24);
+}
+
+.pay-button:disabled {
+    background: #555555;
+    cursor: not-allowed;
+}
+
+/* Notificações */
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #333;
+    color: white;
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    z-index: 10000;
+    animation: slideIn 0.3s ease;
+}
+
+.notification-success {
+    background-color: #4CAF50;
+}
+
+.notification-error {
+    background-color: #f44336;
+}
+
+@keyframes slideIn {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideOut {
+    from { transform: translateX(0); opacity: 1; }
+    to { transform: translateX(100%); opacity: 0; }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        gap: 1.5rem;
+        margin: 1rem;
+        padding: 1.5rem;
+    }
+
+    .order-summary, .card-details {
+        min-width: unset;
+        width: 100%;
+    }
+}
+
+
+
+
+/* Estilos para campos de input */
+.form-group input[type="text"],
+.form-group input[type="email"] {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #555555;
+    border-radius: 6px;
+    background-color: #444444;
+    color: #ffffff;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus {
+    border-color: #F15A24;
+    outline: none;
+}
+
+/* Layout de duas colunas para form-row */
+.form-row {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+/* Estilos para o botão de voltar */
+.back-btn {
+    background-color: #444444;
+    color: #ffffff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.back-btn:hover {
+    background-color: #555555;
+}
+
+

@@ -227,9 +227,10 @@ async function processPayment() {
         }
 
     } catch (error) {
-        console.error('Erro no pagamento:', error);
-        showNotification(error.message || 'Erro no processamento do pagamento', 'error');
-        continueBtn.textContent = 'Continuar';
+        console.error("Erro no pagamento:", error);
+        showNotification(error.message || "Erro no processamento do pagamento", "error");
+    } finally {
+        continueBtn.textContent = "Continuar";
         continueBtn.disabled = false;
     }
 }
