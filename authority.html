@@ -219,81 +219,48 @@
                                 <div class="req-value no">Não</div>
                             </div>
                             <div class="requirement-item">
-                                <div class="req-label">Anti-cheat Suportado:</div>
-                                <div class="req-value">BattlEye</div>
+                                <div class="req-label">Compatibilidade:</div>
+                                <div class="req-value">
+                                    <ul class="compatibility-list">
+                                        <li>Windows 10 (20H2, 21H1, 21H2, 22H2)</li>
+                                        <li>Windows 11 (21H2, 22H2)</li>
+                                    </ul>
+                                </div>
                             </div>
                             <div class="requirement-item">
                                 <div class="req-label">Processador:</div>
                                 <div class="req-value">Intel & AMD</div>
                             </div>
                             <div class="requirement-item">
-                                <div class="req-label">Sistema Operacional:</div>
-                                <div class="req-value">Windows 10, 11</div>
+                                <div class="req-label">Cliente de Jogo:</div>
+                                <div class="req-value">Steam</div>
                             </div>
                             <div class="requirement-item">
-                                <div class="req-label">Placa de Vídeo:</div>
-                                <div class="req-value">NVIDIA & AMD</div>
-                            </div>
-                            <div class="requirement-item">
-                                <div class="req-label">Observações:</div>
-                                <div class="req-value">Pode não funcionar em todas as versões do Windows 10/11. Sempre verifique o status antes de comprar.</div>
+                                <div class="req-label">Status Anti-cheat:</div>
+                                <div class="req-value">
+                                    <span class="status-badge online">Indetectável</span>
+                                </div>
                             </div>
                         </div>
                     </div>
 
                     <!-- Reviews Tab -->
                     <div class="tab-panel" id="reviews">
-                        <div class="review-summary">
-                            <div class="stars">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
-                                <span>4.5 de 5 estrelas</span>
+                        <div class="review-item">
+                            <div class="review-header">
+                                <span class="reviewer-name">Usuário Anônimo</span>
+                                <span class="review-rating">★★★★★</span>
                             </div>
-                            <p>Baseado em 120 avaliações</p>
+                            <p class="review-text">"Excelente cheat, funciona perfeitamente e sem problemas!"</p>
                         </div>
-                        <div class="reviews-list">
-                            <div class="review-item">
-                                <div class="review-header">
-                                    <span class="reviewer-name">Usuário Anônimo</span>
-                                    <span class="review-date">20 de Junho, 2024</span>
-                                    <div class="review-stars">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                    </div>
-                                </div>
-                                <p class="review-text">"Excelente cheat! Funciona perfeitamente e é muito fácil de usar. Recomendo!"</p>
+                        <div class="review-item">
+                            <div class="review-header">
+                                <span class="reviewer-name">GamerPro</span>
+                                <span class="review-rating">★★★★☆</span>
                             </div>
-                            <div class="review-item">
-                                <div class="review-header">
-                                    <span class="reviewer-name">GamerPro</span>
-                                    <span class="review-date">15 de Junho, 2024</span>
-                                    <div class="review-stars">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star-half-alt"></i>
-                                    </div>
-                                </div>
-                                <p class="review-text">"Muito bom, mas tive um pequeno problema com a instalação. O suporte foi rápido e resolveu."</p>
-                            </div>
+                            <p class="review-text">"Muito bom, mas tive um pequeno problema com a instalação. O suporte ajudou rapidamente."</p>
                         </div>
-                        <button class="btn-secondary">Ver todas as avaliações</button>
                     </div>
-                </div>
-            </section>
-
-            <!-- Related Products -->
-            <section class="related-products">
-                <h2>Outros Cheats para DayZ</h2>
-                <div class="products-grid">
-                    <!-- Product items will be loaded here by JavaScript -->
                 </div>
             </section>
         </div>
@@ -302,214 +269,46 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <img src="LogoSDK.svg" alt="SDKcheats Logo">
-                    <span>SDKCHEATS</span>
-                </div>
-                <nav class="footer-nav">
-                    <a href="#">Termos de Serviço</a>
-                    <a href="#">Política de Privacidade</a>
-                    <a href="#">Contato</a>
-                </nav>
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-telegram"></i></a>
-                    <a href="#"><i class="fab fa-discord"></i></a>
-                </div>
-            </div>
-            <p class="copyright">&copy; 2024 SDKcheats. Todos os direitos reservados.</p>
+            <p>&copy; 2023 SDKcheats. Todos os direitos reservados.</p>
         </div>
     </footer>
 
+    <script src="product-page.js"></script>
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const durationOptions = document.querySelectorAll(".duration-option");
-            const totalPriceElement = document.querySelector(".total-price .amount");
-            const buyButton = document.querySelector(".buy-btn");
-            const acceptTermsCheckbox = document.getElementById("accept-terms");
-            const acceptPrivacyCheckbox = document.getElementById("accept-privacy");
+        document.addEventListener('DOMContentLoaded', function() {
+            const durationOptions = document.querySelectorAll('.duration-option');
+            const totalPriceElement = document.querySelector('.total-price .amount');
+            const buyButton = document.querySelector('.buy-btn');
+            const acceptTermsCheckbox = document.getElementById('accept-terms');
+            const acceptPrivacyCheckbox = document.getElementById('accept-privacy');
 
-            let selectedDuration = 1; // Default to 1 Day
-            let selectedPrice = 15; // Default price for 1 Day
+            let selectedProduct = "Authority Cheat";
+            let selectedDuration = 1; // Default to 1 day
+            let selectedPrice = 15; // Default to R$ 15
 
-            // Function to update total price display
-            function updateTotalPrice() {
-                totalPriceElement.textContent = `R$ ${selectedPrice}`;
-            }
-
-            // Event listeners for duration options
             durationOptions.forEach(option => {
-                option.addEventListener("click", function() {
-                    durationOptions.forEach(opt => opt.classList.remove("active"));
-                    this.classList.add("active");
-                    selectedDuration = parseInt(this.dataset.duration);
-                    selectedPrice = parseInt(this.dataset.price);
-                    updateTotalPrice();
+                option.addEventListener('click', function() {
+                    durationOptions.forEach(opt => opt.classList.remove('active'));
+                    this.classList.add('active');
+                    selectedDuration = this.dataset.duration;
+                    selectedPrice = this.dataset.price;
+                    totalPriceElement.textContent = `R$ ${selectedPrice}`;
                 });
             });
 
-            // Event listener for buy button
-            buyButton.addEventListener("click", function() {
+            buyButton.addEventListener('click', function() {
                 if (!acceptTermsCheckbox.checked || !acceptPrivacyCheckbox.checked) {
-                    // Adiciona uma classe para destacar os checkboxes não marcados
-                    if (!acceptTermsCheckbox.checked) {
-                        acceptTermsCheckbox.parentElement.classList.add('highlight-error');
-                    }
-                    if (!acceptPrivacyCheckbox.checked) {
-                        acceptPrivacyCheckbox.parentElement.classList.add('highlight-error');
-                    }
-                    // Remove a classe de destaque após alguns segundos
-                    setTimeout(() => {
-                        acceptTermsCheckbox.parentElement.classList.remove('highlight-error');
-                        acceptPrivacyCheckbox.parentElement.classList.remove('highlight-error');
-                    }, 3000);
+                    alert('Por favor, aceite os termos de uso e a política de privacidade para continuar.');
                     return;
                 }
 
-                const productName = "Authority Cheat para DayZ";
-                const whatsappNumber = "5544936184613"; // Seu número de WhatsApp
-                const message = `Olá! Tenho interesse em adquirir o produto ${productName} para ${selectedDuration} dias. O valor é R$ ${selectedPrice}.`;
-                const whatsappUrl = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodeURIComponent(message)}`;
-                
-                window.open(whatsappUrl, "_blank");
+                const whatsappNumber = '5544936184613';
+                const message = `Olá! Tenho interesse em comprar o produto "${selectedProduct}" para ${selectedDuration} dia(s) no valor de R$ ${selectedPrice}.`;
+                const whatsappLink = `https://api.whatsapp.com/send/?phone=${whatsappNumber}&text=${encodeURIComponent(message)}&type=phone_number&app_absent=0`;
+                window.open(whatsappLink, '_blank');
             });
-
-            // Initial price update
-            updateTotalPrice();
-
-            // Tab functionality
-            const tabButtons = document.querySelectorAll(".tab-btn");
-            const tabPanels = document.querySelectorAll(".tab-panel");
-
-            tabButtons.forEach(button => {
-                button.addEventListener("click", function() {
-                    tabButtons.forEach(btn => btn.classList.remove("active"));
-                    this.classList.add("active");
-
-                    tabPanels.forEach(panel => panel.classList.remove("active"));
-                    document.getElementById(this.dataset.tab).classList.add("active");
-                });
-            });
-
-            // Placeholder for video play functionality
-            window.playVideo = function() {
-                // alert("Funcionalidade de vídeo em desenvolvimento!"); // Removido o alerta
-            };
-
-            // Load related products (example, replace with actual data loading)
-            const relatedProductsGrid = document.querySelector(".related-products .products-grid");
-            if (relatedProductsGrid) {
-                const relatedProducts = [
-                    {
-                        name: "Ancient",
-                        price: "A partir de R$40",
-                        status: "online",
-                        features: ["ESP", "No grass", "Silent Aimbot"]
-                    },
-                    {
-                        name: "Hyper",
-                        price: "A partir de R$35",
-                        status: "online",
-                        features: ["FOV", "Smooth", "Players, bots ESP"]
-                    }
-                ];
-
-                relatedProductsGrid.innerHTML = relatedProducts.map(product => `
-                    <div class="product-item">
-                        <div class="product-header">
-                            <h3 class="product-name">${product.name}</h3>
-                            <span class="product-status status-${product.status}">
-                                ${product.status === 'online' ? 'Online' : product.status === 'updating' ? 'Atualizando' : 'Offline'}
-                            </span>
-                        </div>
-                        <div class="product-price">${product.price}</div>
-                        <ul class="product-features">
-                            ${product.features.map(feature => `<li>${feature}</li>`).join('')}
-                        </ul>
-                        <div class="product-actions">
-                            <button class="btn-primary">Comprar Agora</button>
-                            <button class="btn-secondary">Detalhes</button>
-                        </div>
-                    </div>
-                `).join('');
-            }
         });
     </script>
-    <style>
-        .highlight-error {
-            border: 2px solid red; /* Adiciona uma borda vermelha para destacar */
-            box-shadow: 0 0 5px red; /* Adiciona uma sombra vermelha */
-        }
-    </style>
 </body>
 </html>
-
-
-
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const durationOptions = document.querySelectorAll('.duration-option');
-        const totalPriceElement = document.querySelector('.purchase-info .amount');
-        const buyButton = document.querySelector('.buy-btn');
-        const productName = document.querySelector('.product-title').textContent.trim();
-
-        let selectedDuration = 1;
-        let selectedPrice = 15;
-
-        durationOptions.forEach(option => {
-            option.addEventListener('click', function() {
-                durationOptions.forEach(opt => opt.classList.remove('active'));
-                this.classList.add('active');
-                selectedDuration = this.dataset.duration;
-                selectedPrice = this.dataset.price;
-                totalPriceElement.textContent = `R$ ${selectedPrice}`;
-            });
-        });
-
-        buyButton.addEventListener('click', function() {
-            const whatsappNumber = '5544936184613';
-            const message = `Olá! Tenho interesse em comprar o produto "${productName}" para ${selectedDuration} dia(s) no valor de R$ ${selectedPrice}.`;
-            const whatsappUrl = `https://api.whatsapp.com/send/?phone=${whatsappNumber}&text=${encodeURIComponent(message)}&type=phone_number&app_absent=0`;
-            window.location.href = whatsappUrl;
-        });
-    });
-</script>
-
-
-
-
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const buyButton = document.querySelector('.buy-btn');
-        const durationOptions = document.querySelectorAll('.duration-option');
-        const acceptTermsCheckbox = document.getElementById('accept-terms');
-        const acceptPrivacyCheckbox = document.getElementById('accept-privacy');
-        const productTitle = 'Authority Cheat para DayZ';
-
-        let selectedDuration = 1; // Default to 1 Day
-        let selectedPrice = 15; // Default to R$ 15
-
-        durationOptions.forEach(option => {
-            option.addEventListener('click', function() {
-                durationOptions.forEach(opt => opt.classList.remove('active'));
-                this.classList.add('active');
-                selectedDuration = this.dataset.duration;
-                selectedPrice = this.dataset.price;
-                document.querySelector('.total-price .amount').textContent = `R$ ${selectedPrice}`;
-            });
-        });
-
-        buyButton.addEventListener('click', function() {
-            if (!acceptTermsCheckbox.checked || !acceptPrivacyCheckbox.checked) {
-                alert('Por favor, aceite os termos de uso e a política de privacidade para continuar.');
-                return;
-            }
-
-            const message = `Olá! Tenho interesse em adquirir o ${productTitle} para ${selectedDuration} dia(s) no valor de R$ ${selectedPrice}.`;
-            const whatsappUrl = `https://api.whatsapp.com/send/?phone=5544936184613&text=${encodeURIComponent(message)}&type=phone_number&app_absent=0`;
-            window.location.href = whatsappUrl;
-        });
-    });
-</script>
-
 
