@@ -107,11 +107,13 @@ function applyPromoCode() {
 
     if (promoCodes[promoCode]) {
         promoDiscount = promoCodes[promoCode];
+        showNotification(`Código promocional aplicado! Desconto de ${promoDiscount}%`, "success");
         applyPromoBtn.textContent = "Aplicado";
         applyPromoBtn.disabled = true;
         promoCodeInput.disabled = true;
         updatePricing();
     } else if (promoCode) {
+        showNotification("Código promocional inválido", "error");
     }
 }
 
@@ -154,8 +156,45 @@ function isValidEmail(email) {
     return emailRegex.test(email);
 }
 
+function showNotification(message, type = "info") {
+    // Criar elemento de notificação
+    const notification = document.createElement("div");
+    notification.className = `notification notification-${type}`;
+    notification.textContent = message;
+    
+    // Estilos da notificação
+    notification.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: ${type === "success" ? "#4CAF50" : type === "error" ? "#f44336" : "#2196F3"};
+        color: white;
+        padding: 1rem 1.5rem;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        z-index: 10000;
+        animation: slideIn 0.3s ease;
+    `;
+
+    document.body.appendChild(notification);
+
+    // Remover após 3 segundos
+    setTimeout(() => {
+        notification.style.animation = "slideOut 0.3s ease";
+        setTimeout(() => {
+            document.body.removeChild(notification);
+        }, 300);
+    }, 3000);
+}
+
 async function processPayment() {
     if (continueBtn.disabled) return;
+
+    // Validar termos de uso e privacidade antes de prosseguir
+    if (!acceptTermsCheckbox.checked || !acceptPrivacyCheckbox.checked) {
+        showNotification("Por favor, aceite os termos de uso e a política de privacidade para continuar.", "error");
+        return;
+    }
 
     // Mostrar loading
     continueBtn.textContent = "Processando...";
@@ -170,8 +209,11 @@ async function processPayment() {
         
         window.open(whatsappUrl, "_blank");
 
+        showNotification("Redirecionando para o WhatsApp...", "info");
+
     } catch (error) {
         console.error("Erro ao redirecionar para o WhatsApp:", error);
+        showNotification("Erro ao redirecionar para o WhatsApp", "error");
     } finally {
         continueBtn.textContent = "Continuar";
         continueBtn.disabled = false;
